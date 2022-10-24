@@ -8,6 +8,8 @@ function findSubstring(s, words) {
   let outArr = [];
   let sortedWordInput = words.sort();
   let sortedWordString = "";
+  const set = new Set(words);
+  console.log(set);
 
   for (let j = 0; j < words.length; j++) {
     sortedWordString += sortedWordInput[j];
@@ -21,6 +23,7 @@ function findSubstring(s, words) {
       ) {
         let x = i;
         let y = i + words[0].length * words.length;
+
         let output = splitAndPush(s, x, y, words[0].length);
         if (output === sortedWordString && !outArr.includes(i)) {
           outArr.push(i);
